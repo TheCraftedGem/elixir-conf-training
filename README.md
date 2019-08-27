@@ -27,7 +27,7 @@ you fix it, you will see the JavaScript error disappear. Your Phoenix Logs will 
 and Channel connection.
 
 ### 2. `handle_in/3` is not responding correctly
-
+ <!--Add Folder Paths  -->
 Once you fix 1, you will start getting a crash because of `handle_in/3` being broken. This lives in the
 `FeedChannel` module. The docs for Channels have an example of the correct format that you should send
 a reply in. Make this change and the frontend will start displaying 3 sample items.

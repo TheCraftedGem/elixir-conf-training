@@ -20,5 +20,6 @@ defmodule Example2.Activity do
     # name is. You will want to broadcast the message data
 
     # YOUR LINE HERE
+    Example2Web.Endpoint.broadcast!("feed", "activity.created", activity)
   end
 end

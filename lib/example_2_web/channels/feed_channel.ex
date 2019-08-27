@@ -10,9 +10,11 @@ defmodule Example2Web.FeedChannel do
   def handle_in("fetch", params, socket) do
     payload = %{activities: all_activities(params)}
 
+
+
     # TODO: This is not replying to the fetch command correctly, causing a crash. Return a successful
     # response so that the client is responded to with the payload above.
-    nil
+    {:reply, {:ok, payload}, socket}
   end
 
   # TODO: The function for create_activity is purposefully left out. Try implementing it to these specs:
@@ -25,7 +27,15 @@ defmodule Example2Web.FeedChannel do
   #     in the Channel by add a valid DateTime to the params map.
 
   # def handle_in("create_activity", params, socket) do
-  # end
+
+  #   changeset = Activity.Activity.changeset(%Activity.Activity{}, params)
+  #   activity = Repo.insert!(changeset)
+  #   response = Live.render("index.json", %{activity: activity})
+  #   {:reply, {:ok, response}, socket}
+  # en
+
+  # With the broadcast is this what's going on under the hood in liveview? It it just broadcasting to our mounts?
+
 
   defp all_activities(params) do
     Activity.all(params)
