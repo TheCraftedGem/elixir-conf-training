@@ -10,8 +10,6 @@ defmodule Example2Web.FeedChannel do
   def handle_in("fetch", params, socket) do
     payload = %{activities: all_activities(params)}
 
-
-
     # TODO: This is not replying to the fetch command correctly, causing a crash. Return a successful
     # response so that the client is responded to with the payload above.
     {:reply, {:ok, payload}, socket}
@@ -35,7 +33,10 @@ defmodule Example2Web.FeedChannel do
   # en
 
   # With the broadcast is this what's going on under the hood in liveview? It it just broadcasting to our mounts?
-
+  # What do you think about jr's who've learned elixir on their own and have a few projects under their belts/good fundelemtals but no real life production experience with a abig company
+  # Would you give em a chance? Or do ya recommend they go get production experience in another language and come back?
+  # Has your company hired jrs for elixir roles devs with good fundementals but no production experience? What made ya take a chance on em?  What are the signs ya look for?  And How have they performed?
+  # Support Engineering Roles...
 
   defp all_activities(params) do
     Activity.all(params)
